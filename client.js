@@ -17,12 +17,11 @@ const connect = function() {
   console.log('Successfully connected to game server');
   conn.write('Name: AAR');
   });
-  
+
   return conn;
 };
 
-console.log("Connecting ...");
-connect();
+
 
 module.exports = {
   connect // ES6 shorthand syntax for 'connect': connect
