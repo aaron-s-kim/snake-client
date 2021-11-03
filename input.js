@@ -25,6 +25,16 @@ const handleUserInput = function(key) {
       connection.write(`${wasd[k]}`);
     }
   }
+  
+  if (key === 'r') {
+    connection.write("Say: reload");
+  }
+  if (key === 'v') {
+    connection.write("Say: melee");
+  }
+  if (key === 'f') {
+    connection.write("Say: snek attack");
+  }
 
   if (key === '\u0003') { // Ctrl+C input to terminate
     console.log('Exiting...');
