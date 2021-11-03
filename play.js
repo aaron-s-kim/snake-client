@@ -6,4 +6,3 @@ const { setupInput } = require("./input");
 
 console.log("Connecting ...");
 setupInput(connect());
-console.log('Successfully setup user input interface');

@@ -1,5 +1,7 @@
 // input.js
 
+const { MOVE, SAY } = require("./constants");
+
 // Stores the active TCP connection object.
 let connection;
 
@@ -14,26 +16,18 @@ const setupInput = function(conn) {
   return stdin;
 };
 
-const wasd = {  w: "Move: up", a: "Move: left", s: "Move: down", d: "Move: right"  };
-
 // Event listener for stdin
 const handleUserInput = function(key) {
   
-  for (let k in wasd) {
+  for (let k in MOVE) {
     if (key === k) {
-      console.log(`key: ${k}, val: ${wasd[k]}`);
-      connection.write(`${wasd[k]}`);
+      connection.write(`${MOVE[k]}`);
     }
   }
-  
-  if (key === 'r') {
-    connection.write("Say: reload");
-  }
-  if (key === 'v') {
-    connection.write("Say: melee");
-  }
-  if (key === 'f') {
-    connection.write("Say: snek attack");
+  for (let k in SAY) {
+    if (key === k) {
+      connection.write(`${SAY[k]}`);
+    }
   }
 
   if (key === '\u0003') { // Ctrl+C input to terminate
