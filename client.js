@@ -1,3 +1,5 @@
+// client.js
+
 const net = require("net");
 
 // establishes a connection with the game server
@@ -14,8 +16,8 @@ const connect = function() {
   });
 
   conn.on('connect', () => {
-  console.log('Successfully connected to game server');
-  conn.write('Name: AAR');
+    console.log('Successfully connected to game server');
+    conn.write('Name: AAR');
   });
 
   return conn;
